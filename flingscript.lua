@@ -36,7 +36,7 @@ TitleBar.Parent = MainFrame
 local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, -30, 1, 0)
 Title.BackgroundTransparency = 1
-Title.Text = "KILASIK'S MULTI-FLING"
+Title.Text = "Wolfy's MULTI-FLING"
 Title.TextColor3 = Color3.fromRGB(255, 80, 80)
 Title.Font = Enum.Font.SourceSansBold
 Title.TextSize = 18
@@ -490,11 +490,4 @@ RefreshPlayerList()
 UpdateStatus()
 -- Success message
 Message("Loaded", "Wolfy's Multi-Target Fling GUI loaded!", 3)
--- Toggle GUI with Left Alt
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end
-
-    if input.KeyCode == Enum.KeyCode.LeftAlt then
-        MainFrame.Visible = not MainFrame.Visible
-    end
 end)
