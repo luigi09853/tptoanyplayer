@@ -1,5 +1,5 @@
 --[[
-    KILASIK's Multi-Target Fling Exploit
+    Wolfy's Multi-Target Fling Exploit
     Based on the working fling mechanism from zqyDSUWX
     Features:
     - Select multiple targets
@@ -14,7 +14,7 @@ local RunService = game:GetService("RunService")
 local Player = Players.LocalPlayer
 -- GUI Setup
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "KilasikFlingGUI"
+ScreenGui.Name = "Wolfy Fling GUI"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.Parent = game:GetService("CoreGui")
 -- Main Frame
@@ -489,4 +489,12 @@ end)
 RefreshPlayerList()
 UpdateStatus()
 -- Success message
-Message("Loaded", "KILASIK's Multi-Target Fling GUI loaded!", 3)
+Message("Loaded", "Wolfy's Multi-Target Fling GUI loaded!", 3)
+-- Toggle GUI with Left Alt
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    if input.KeyCode == Enum.KeyCode.LeftAlt then
+        MainFrame.Visible = not MainFrame.Visible
+    end
+end)
